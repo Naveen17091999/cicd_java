@@ -13,7 +13,7 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo Uploading artifact to S3...
-      - aws s3 cp target/your-app.jar s3://your-bucket-name/your-app.jar
+      - aws s3 cp target/aws-0.0.1-SNAPSHOT.jar s3://your-bucket-name/aws-0.0.1-SNAPSHOT.jar
 
 artifacts:
   files:
