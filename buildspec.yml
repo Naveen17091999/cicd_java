@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing dependencies...
+      - mvn install -DskipTests=true
+  build:
+    commands:
+      - echo Build started on `date`
+      - mvn package
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Uploading artifact to S3...
+      - aws s3 cp target/your-app.jar s3://your-bucket-name/your-app.jar
+
+artifacts:
+  files:
+    - target/your-app.jar
